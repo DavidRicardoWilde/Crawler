@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e52189f-bb46-4010-92a5-35d2b8519e14" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.circleci/checkstyle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gluttongk/prokects/crawler/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/gluttongk/prokects/crawler/SmokeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +20,31 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Crawler" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,8 +59,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -43,9 +73,46 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.other" />
+    <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.gluttongk.prokects.crawler" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.SmokeTest.test">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gluttongk.prokects.crawler.Main" />
+      <module name="Crawler" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gluttongk.prokects.crawler.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SmokeTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Crawler" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gluttongk.prokects.crawler.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.gluttongk.prokects.crawler" />
+      <option name="MAIN_CLASS_NAME" value="com.gluttongk.prokects.crawler.SmokeTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.29" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment />
@@ -109,6 +176,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SmokeTest.test" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -120,21 +193,97 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589732039000</updated>
-      <workItem from="1589732040710" duration="360000" />
+      <workItem from="1589732040710" duration="2061000" />
+      <workItem from="1589737808243" duration="2124000" />
+      <workItem from="1589744254882" duration="1655000" />
+      <workItem from="1589747037121" duration="1489000" />
     </task>
+    <task id="LOCAL-00001" summary="Project init">
+      <created>1589734081842</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589734081842</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Project init" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project init" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="140" y="304" width="1000" height="961" key="#Project_Structure" timestamp="1589732148296">
+    <state x="140" y="316" width="1000" height="882" key="#Intentions" timestamp="1589745873934">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="140" y="304" width="1000" height="961" key="#Project_Structure/0.0.2560.1440@0.0.2560.1440" timestamp="1589732148296" />
-    <state x="128" y="150" key="CommitChangelistDialog2" timestamp="1589734045203">
+    <state x="140" y="316" width="1000" height="882" key="#Intentions/0.0.2560.1440@0.0.2560.1440" timestamp="1589745873934" />
+    <state x="140" y="304" width="1000" height="961" key="#Project_Structure" timestamp="1589748895836">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="128" y="150" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1589734045203" />
+    <state x="140" y="304" width="1000" height="961" key="#Project_Structure/0.0.2560.1440@0.0.2560.1440" timestamp="1589748895836" />
+    <state x="169" y="331" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1589739282226">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="169" y="331" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1589739282226" />
+    <state x="178" y="642" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1589739509963">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="178" y="642" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1589739509963" />
+    <state x="128" y="150" key="CommitChangelistDialog2" timestamp="1589749435827">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="128" y="150" key="CommitChangelistDialog2/0.0.2560.1440@0.0.2560.1440" timestamp="1589749435827" />
+    <state width="1230" height="390" key="GridCell.Tab.0.bottom" timestamp="1589749183504">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1230" height="390" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1589749183504" />
+    <state width="1230" height="390" key="GridCell.Tab.0.center" timestamp="1589749183503">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1230" height="390" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1589749183503" />
+    <state width="1230" height="390" key="GridCell.Tab.0.left" timestamp="1589749183503">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1230" height="390" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1589749183503" />
+    <state width="1230" height="390" key="GridCell.Tab.0.right" timestamp="1589749183504">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1230" height="390" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1589749183504" />
+    <state x="686" y="399" key="SettingsEditor" timestamp="1589748907455">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="686" y="399" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1589748907455" />
+    <state x="383" y="638" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589748911976">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="383" y="638" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1440@0.0.2560.1440" timestamp="1589748911976" />
+    <state x="338" y="394" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1589748937686">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="338" y="394" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1589748937686" />
+    <state x="221" y="342" key="run.anything.popup" timestamp="1589746168697">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="221" y="342" key="run.anything.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1589746168697" />
+    <state x="221" y="324" width="838" height="1032" key="search.everywhere.popup" timestamp="1589746836415">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="221" y="324" width="838" height="1032" key="search.everywhere.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1589746836415" />
   </component>
 </project>
