@@ -17,10 +17,10 @@ import java.util.List;
 import java.util.Set;
 
 public class CrawlerQueen {
-    static private String sina = "https://sina.cn";
-    static private String medium = "https://medium.com/";
-    static private String github = "https://github.com/";
-    static private String qq = "https://www.qq.com/";
+    static final String sina = "https://sina.cn";
+    static final String medium = "https://medium.com/";
+    static final String github = "https://github.com/";
+    static final String qq = "https://www.qq.com/";
 
     /**
      * Demo
@@ -28,7 +28,6 @@ public class CrawlerQueen {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-
         //待处理的链接池
         List<String> linkPool = new ArrayList<>();
         //已经处理的链接池
