@@ -1,3 +1,4 @@
+.idea/
 dea/
 .gradle/
 build/
@@ -11,4 +12,3 @@ target/
 .settings/
 bin/
 target/
-.idea/
