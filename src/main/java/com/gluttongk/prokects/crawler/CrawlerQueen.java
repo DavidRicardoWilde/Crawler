@@ -28,20 +28,24 @@ public class CrawlerQueen {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-
         //待处理的链接池
         List<String> linkPool = new ArrayList<>();
+        //TODO: 从数据库加载即将处理的链接的代码
+
         //已经处理的链接池
         Set<String> processedLinks = new HashSet<>();
-
         linkPool.add(sina);
+        //TODO: 从数据库加载已经处理的链接的代码
+
 
         while (true) {
             if (linkPool.isEmpty()) {
                 break;
             }
 
+            //从ArrayList从尾部删除会更有效率
             String link = linkPool.remove(linkPool.size() - 1);
+            // TODO：每次处理完后 要更新数据库
 
             if (processedLinks.contains(link)) {
                 continue;
