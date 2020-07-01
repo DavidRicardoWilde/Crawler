@@ -25,11 +25,11 @@ public class MyBatisCrawlerDao implements CrawlerDao {
     }
 
     @Override
-    public String getNextLinkThenDelete() throws SQLException {
+    public synchronized String getNextLinkThenDelete() throws SQLException {
         try (SqlSession session = sqlSessionFactory.openSession(true)) {
-            String url = session.selectOne("com.github.hcsp.MyMapper.selectNextAvailableLink");
+            String url = session.selectOne("com.gluttongk.projects.MyMapper.selectNextAvailableLink");
             if (url != null) {
-                session.delete("com.github.hcsp.MyMapper.deleteLink", url);
+                session.delete("com.gluttongk.projects.MyMapper.deleteLink", url);
             }
             return url;
         }
@@ -38,14 +38,14 @@ public class MyBatisCrawlerDao implements CrawlerDao {
     @Override
     public void insertNewsIntoDatabase(String url, String title, String content) throws SQLException {
         try (SqlSession session = sqlSessionFactory.openSession(true)) {
-            session.insert("com.github.hcsp.MyMapper.insertNews", new News(url, title, content));
+            session.insert("com.gluttongk.projects.MyMapper.insertNews", new News(url, title, content));
         }
     }
 
     @Override
     public boolean isLinkProcessed(String link) throws SQLException {
         try (SqlSession session = sqlSessionFactory.openSession()) {
-            int count = (Integer) session.selectOne("com.github.hcsp.MyMapper.countLink", link);
+            int count = (Integer) session.selectOne("com.gluttongk.projects.MyMapper.countLink", link);
             return count != 0;
         }
     }
@@ -56,7 +56,7 @@ public class MyBatisCrawlerDao implements CrawlerDao {
         param.put("tableName", "links_already_processed");
         param.put("link", link);
         try (SqlSession session = sqlSessionFactory.openSession(true)) {
-            session.insert("com.github.hcsp.MyMapper.insertLink", param);
+            session.insert("com.gluttongk.projects.MyMapper.insertLink", param);
         }
     }
 
@@ -66,7 +66,7 @@ public class MyBatisCrawlerDao implements CrawlerDao {
         param.put("tableName", "links_to_be_processed");
         param.put("link", link);
         try (SqlSession session = sqlSessionFactory.openSession(true)) {
-            session.insert("com.github.hcsp.MyMapper.insertLink", param);
+            session.insert("com.gluttongk.projects.MyMapper.insertLink", param);
         }
     }
 }

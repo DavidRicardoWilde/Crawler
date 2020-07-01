@@ -15,35 +15,39 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-public class CrawlerQueen {
-    private CrawlerDao dao = new JdbcCrawlerDao();
+public class Crawler extends Thread {
+    private CrawlerDao dao;
 
-    public void run() throws SQLException, IOException {
-
-        String link;
-
-        // 从数据库中加载下一个链接，如果能加载到，则进行循环
-        while ((link = dao.getNextLinkThenDelete()) != null) {
-            // 询问数据库，当前链接是不是已经被处理过了？
-            if (dao.isLinkProcessed(link)) {
-                continue;
-            }
-
-            if (isInterestingLink(link)) {
-                System.out.println(link);
-                Document doc = httpGetAndParseHtml(link);
-
-                parseUrlsFromPageAndStoreIntoDatabase(doc);
-
-                storeIntoDatabaseIfItIsNewsPage(doc, link);
-
-                dao.updateDatabase(link, "INSERT INTO LINKS_ALREADY_PROCESSED (link) values (?)");
-            }
-        }
+    public Crawler(CrawlerDao dao) {
+        this.dao = dao;
     }
 
-    public static void main(String[] args) throws IOException, SQLException {
-        new CrawlerQueen().run();
+    @Override
+    public void run() {
+        try {
+            String link;
+
+            // 从数据库中加载下一个链接，如果能加载到，则进行循环
+            while ((link = dao.getNextLinkThenDelete()) != null) {
+                // 询问数据库，当前链接是不是已经被处理过了？
+                if (dao.isLinkProcessed(link)) {
+                    continue;
+                }
+
+                if (isInterestingLink(link)) {
+                    System.out.println(link);
+                    Document doc = httpGetAndParseHtml(link);
+
+                    parseUrlsFromPageAndStoreIntoDatabase(doc);
+
+                    storeIntoDatabaseIfItIsNewsPage(doc, link);
+
+                    dao.insertProcessedLink(link);
+                }
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void parseUrlsFromPageAndStoreIntoDatabase(Document doc) throws SQLException {
@@ -55,7 +59,7 @@ public class CrawlerQueen {
             }
 
             if (!href.toLowerCase().startsWith("javascript")) {
-                dao.updateDatabase(href, "INSERT INTO LINKS_TO_BE_PROCESSED (link) values (?)");
+                dao.insertLinkToBeProcessed(href);
             }
         }
     }
@@ -73,6 +77,7 @@ public class CrawlerQueen {
     }
 
     private static Document httpGetAndParseHtml(String link) throws IOException {
+        // 这是我们感兴趣的，我们只处理新浪站内的链接
         CloseableHttpClient httpclient = HttpClients.createDefault();
 
 
@@ -86,6 +91,7 @@ public class CrawlerQueen {
         }
     }
 
+    // 我们只关心news。sina的，我们要排除登陆页面
     private static boolean isInterestingLink(String link) {
         return (isNewsPage(link) || isIndexPage(link)) && isNotLoginPage(link);
     }

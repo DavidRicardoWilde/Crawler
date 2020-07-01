@@ -7,20 +7,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class JdbcCrawlerDao implements CrawlerDao {
-    private static final String USER_NAME = "";
-    private static final String PASSWORD = "";
+    private static final String USER_NAME = "root";
+    private static final String PASSWORD = "root";
 
     private final Connection connection;
 
     public JdbcCrawlerDao() {
         try {
-            this.connection = DriverManager.getConnection("jdbc:h2:file:/Users/ann/Desktop/Study/Java/JavaProjectPractice/Crawler", USER_NAME, PASSWORD);
+            this.connection = DriverManager.getConnection("jdbc:h2:file:/Users/zhb/Projects/xiedaimala-crawler/news", USER_NAME, PASSWORD);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public String getNextLink(String sql) throws SQLException {
+    private String getNextLink(String sql) throws SQLException {
         ResultSet resultSet = null;
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             resultSet = statement.executeQuery();
@@ -74,5 +74,14 @@ public class JdbcCrawlerDao implements CrawlerDao {
             }
         }
         return false;
+    }
+
+    @Override
+    public void insertProcessedLink(String link) {
+
+    }
+
+    @Override
+    public void insertLinkToBeProcessed(String href) {
     }
 }

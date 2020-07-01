@@ -22,6 +22,11 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.17</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.9</version>
@@ -48,7 +53,6 @@
             <artifactId>annotations</artifactId>
             <version>3.0.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
@@ -83,9 +87,9 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>5.2.4</version>
                 <configuration>
-                    <url>jdbc:h2:file:/Users/ann/Desktop/Study/Java/JavaProjectPractice/Crawler</url>
-                    <user/>
-                    <password/>
+                    <url>jdbc:mysql://localhost:3306/news?characterEncoding=utf-8</url>
+                    <user>root</user>
+                    <password>root</password>
                 </configuration>
             </plugin>
         </plugins>
